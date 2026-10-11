@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Search, X, ArrowRight, Bot, Calculator, Compass, Mail, MapPin, Code2 } from "lucide-react";
+import { Search, X, ArrowRight, Bot, Calculator, Compass, Mail, MapPin, Code2, TrendingUp, Workflow } from "lucide-react";
 
 const commands = [
   { label: "Talk to NovoTechy AI", desc: "Open the live AI consultant", icon: Bot, target: "#ai-solutions", color: "#00f0ff" },
   { label: "Estimate my project", desc: "Get an AI-generated scope & budget", icon: Calculator, target: "#ai-solutions", color: "#ffb800" },
   { label: "Find my recommended service", desc: "Take the AI recommender quiz", icon: Compass, target: "#ai-solutions", color: "#5d5fef" },
+  { label: "Calculate my AI ROI", desc: "Estimate savings from AI tooling", icon: TrendingUp, target: "#roi", color: "#00f0ff" },
+  { label: "See how we engage", desc: "Our 5-phase delivery roadmap", icon: Workflow, target: "#process", color: "#5d5fef" },
   { label: "View our services", desc: "Browse all technology solutions", icon: Code2, target: "#services", color: "#00f0ff" },
   { label: "Contact the team", desc: "Start a conversation", icon: Mail, target: "#contact", color: "#5d5fef" },
   { label: "Visit Tampa HQ", desc: "See our Florida location", icon: MapPin, target: "#contact", color: "#ffb800" },

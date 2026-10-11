@@ -16,6 +16,8 @@ export default function Navbar({ onOpenCommand }) {
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
     { label: "AI Solutions", href: "#ai-solutions" },
+    { label: "ROI", href: "#roi" },
+    { label: "Process", href: "#process" },
     { label: "Why Us", href: "#why-us" },
     { label: "Contact", href: "#contact" },
   ];

@@ -4,6 +4,8 @@ import Hero from "@/components/novotechy/Hero";
 import About from "@/components/novotechy/About";
 import Services from "@/components/novotechy/Services";
 import AISolutions from "@/components/novotechy/AISolutions";
+import AIROICalculator from "@/components/novotechy/AIROICalculator";
+import Process from "@/components/novotechy/Process";
 import WhyChooseUs from "@/components/novotechy/WhyChooseUs";
 import Testimonials from "@/components/novotechy/Testimonials";
 import Contact from "@/components/novotechy/Contact";
@@ -32,6 +34,8 @@ export default function Home() {
         <About />
         <Services />
         <AISolutions />
+        <AIROICalculator />
+        <Process />
         <WhyChooseUs />
         <Testimonials />
         <Contact />

@@ -51,7 +51,7 @@ export default function Footer() {
             © {new Date().getFullYear()} NovoTechy LLC. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground font-mono">
-            Built with <span className="text-[#00f0ff]">intelligence</span> in Tampa, FL
+            <span className="text-[#00f0ff]">Innovating</span> tomorrow's tech, today
           </p>
         </div>
       </div>
