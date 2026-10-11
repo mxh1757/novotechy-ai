@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, Mail, Phone, Send, Loader2, CheckCircle2 } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { base44 } from "@/api/base44Client";
 
 export default function Contact() {
   const [intent, setIntent] = useState("Develop");
@@ -10,15 +11,24 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     if (loading) return;
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError("");
+    try {
+      await base44.functions.invoke("sendContactInquiry", {
+        name, email, intent, projectType, message, website,
+      });
       setSent(true);
-    }, 1200);
+    } catch (err) {
+      setError("We couldn't send your message right now. Please email us directly at info@novotechy.com.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const intentOptions = ["Develop", "Scale", "Innovate", "Automate"];
@@ -104,6 +114,15 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={submit} className="space-y-5">
+                <input
+                  type="text"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <div>
                   <label className="text-xs text-muted-foreground mb-3 block">Tell us what you need (complete the sentence)</label>
                   <div className="glass-panel rounded-xl p-4 text-sm leading-relaxed">
@@ -164,6 +183,7 @@ export default function Contact() {
                     <><Send className="w-4 h-4" /> Send Message</>
                   )}
                 </button>
+                {error && <p className="text-[12px] text-red-500 text-center">{error}</p>}
                 <p className="text-[11px] text-muted-foreground text-center">Summary: "I am looking to {intent} {projectType} with NovoTechy."</p>
               </form>
             )}
