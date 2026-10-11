@@ -2,6 +2,7 @@ import { Database, Workflow, TrendingUp } from "lucide-react";
 import AIChatAssistant from "./AIChatAssistant";
 import AIProjectEstimator from "./AIProjectEstimator";
 import AISolutionRecommender from "./AISolutionRecommender";
+import Reveal from "@/components/Reveal";
 
 const aiCapabilities = [
   {
@@ -30,7 +31,7 @@ export default function AISolutions() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#5d5fef]/5 blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#ffb800] font-mono">AI Solutions That Transform</span>
           <h2 className="font-heading font-light text-4xl md:text-5xl mt-4 leading-tight">
             Harness the power of AI with
@@ -39,7 +40,7 @@ export default function AISolutions() {
           <p className="text-muted-foreground mt-5 text-lg">
             Don't just read about our AI capabilities — try them live. Chat with our AI consultant, estimate your project, or get a tailored recommendation.
           </p>
-        </div>
+        </Reveal>
 
         {/* capability cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-16">

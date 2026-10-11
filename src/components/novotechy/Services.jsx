@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Code2, Smartphone, BrainCircuit, ShoppingCart, Layers, HeartHandshake, ChevronDown } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const services = [
   {
@@ -52,13 +53,13 @@ export default function Services() {
   return (
     <section id="services" className="relative py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <Reveal className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-xs uppercase tracking-[0.3em] text-[#00f0ff] font-mono">Our Services</span>
           <h2 className="font-heading font-light text-4xl md:text-5xl mt-4 leading-tight">
             Comprehensive technology solutions
             <span className="text-gradient-cyan font-semibold"> tailored to your business</span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => {
@@ -69,7 +70,7 @@ export default function Services() {
                 key={s.title}
                 onClick={() => setExpanded(isOpen ? -1 : i)}
                 className={`glass-panel rounded-2xl p-7 cursor-pointer transition-all duration-300 ${
-                  isOpen ? "border-[#00f0ff]/40 -translate-y-1" : "hover:border-white/15"
+                  isOpen ? "border-[#00f0ff]/40 -translate-y-1" : "hover:border-black/10 dark:hover:border-white/15"
                 }`}
               >
                 <div
@@ -87,7 +88,7 @@ export default function Services() {
                   <div className="overflow-hidden">
                     <div className="flex flex-wrap gap-2 pt-2">
                       {s.stack.map((tech) => (
-                        <span key={tech} className="px-2.5 py-1 rounded-md bg-white/5 text-[11px] font-mono text-muted-foreground border border-white/5">
+                        <span key={tech} className="px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 text-[11px] font-mono text-muted-foreground border border-black/5 dark:border-white/5">
                           {tech}
                         </span>
                       ))}

@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#080809] text-foreground overflow-x-hidden">
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar onOpenCommand={() => setCmdOpen(true)} />
       <main>
         <Hero />

@@ -78,7 +78,7 @@ export default function AISolutionRecommender() {
 
       {!result && !loading && (
         <>
-          <div className="w-full h-1 rounded-full bg-white/5 mb-6 overflow-hidden">
+          <div className="w-full h-1 rounded-full bg-black/5 dark:bg-white/5 mb-6 overflow-hidden">
             <div className="h-full bg-gradient-to-r from-[#5d5fef] to-[#00f0ff] transition-all duration-500" style={{ width: `${progress}%` }} />
           </div>
 

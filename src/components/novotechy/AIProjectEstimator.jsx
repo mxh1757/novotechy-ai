@@ -54,7 +54,7 @@ export default function AIProjectEstimator() {
             onChange={(e) => setDescription(e.target.value)}
             rows={4}
             placeholder="e.g. We need an AI-powered customer support platform with a custom knowledge base, chatbot, and analytics dashboard..."
-            className="w-full bg-white/5 rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#ffb800]/40 resize-none"
+            className="w-full bg-black/5 dark:bg-white/5 rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#ffb800]/40 resize-none"
           />
         </div>
 
@@ -64,10 +64,10 @@ export default function AIProjectEstimator() {
             <select
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              className="w-full bg-white/5 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#ffb800]/40"
+              className="w-full bg-black/5 dark:bg-white/5 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#ffb800]/40"
             >
               {budgetOptions.map((b) => (
-                <option key={b} value={b} className="bg-[#1a1a1c]">{b}</option>
+                <option key={b} value={b} className="bg-card">{b}</option>
               ))}
             </select>
           </div>
@@ -76,10 +76,10 @@ export default function AIProjectEstimator() {
             <select
               value={timeline}
               onChange={(e) => setTimeline(e.target.value)}
-              className="w-full bg-white/5 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#ffb800]/40"
+              className="w-full bg-black/5 dark:bg-white/5 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#ffb800]/40"
             >
               {timelineOptions.map((t) => (
-                <option key={t} value={t} className="bg-[#1a1a1c]">{t}</option>
+                <option key={t} value={t} className="bg-card">{t}</option>
               ))}
             </select>
           </div>
@@ -129,7 +129,7 @@ export default function AIProjectEstimator() {
             </div>
             <div className="flex flex-wrap gap-2">
               {estimate.teamComposition?.map((r) => (
-                <span key={r} className="px-2.5 py-1 rounded-md bg-white/5 text-xs">{r}</span>
+                <span key={r} className="px-2.5 py-1 rounded-md bg-black/5 dark:bg-white/5 text-xs">{r}</span>
               ))}
             </div>
           </div>

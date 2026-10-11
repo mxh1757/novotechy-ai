@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Bot, Menu, X, Command } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Navbar({ onOpenCommand }) {
   const [scrolled, setScrolled] = useState(false);
@@ -49,13 +50,14 @@ export default function Navbar({ onOpenCommand }) {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           <button
             onClick={onOpenCommand}
             className="flex items-center gap-2 px-3 py-1.5 rounded-lg glass-panel text-xs text-muted-foreground hover:text-foreground transition-colors"
           >
             <Command className="w-3.5 h-3.5" />
             <span>Quick Nav</span>
-            <kbd className="px-1.5 py-0.5 rounded bg-white/5 text-[10px] font-mono">⌘K</kbd>
+            <kbd className="px-1.5 py-0.5 rounded bg-black/5 dark:bg-white/5 text-[10px] font-mono">⌘K</kbd>
           </button>
           <a
             href="#contact"
@@ -65,9 +67,12 @@ export default function Navbar({ onOpenCommand }) {
           </a>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
-          {open ? <X /> : <Menu />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button className="text-foreground" onClick={() => setOpen(!open)}>
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </nav>
 
       {open && (

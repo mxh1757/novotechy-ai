@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MapPin, Mail, Phone, Send, Loader2, CheckCircle2 } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 export default function Contact() {
   const [intent, setIntent] = useState("Develop");
@@ -28,13 +29,13 @@ export default function Contact() {
       <div className="absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full bg-[#00f0ff]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#00f0ff] font-mono">Ready to Transform</span>
           <h2 className="font-heading font-light text-4xl md:text-5xl mt-4 leading-tight">
             Let's discuss how NovoTechy can
             <span className="text-gradient-cyan font-semibold"> achieve your goals</span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left: geospatial node + info */}
@@ -52,7 +53,7 @@ export default function Contact() {
 
               {/* wireframe map */}
               <div className="mt-6 relative h-48 rounded-xl overflow-hidden glass-panel grid-bg">
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 200">
+                <svg className="absolute inset-0 w-full h-full text-foreground" viewBox="0 0 400 200">
                   <defs>
                     <linearGradient id="river" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.6" />
@@ -61,9 +62,9 @@ export default function Contact() {
                   </defs>
                   <path d="M0,60 Q100,40 200,80 T400,70" stroke="url(#river)" strokeWidth="2" fill="none" opacity="0.5" />
                   <path d="M0,120 Q120,140 240,110 T400,130" stroke="#5d5fef" strokeWidth="1.5" fill="none" opacity="0.3" />
-                  <path d="M80,0 L120,200" stroke="#ffffff" strokeWidth="0.5" opacity="0.1" />
-                  <path d="M200,0 L220,200" stroke="#ffffff" strokeWidth="0.5" opacity="0.1" />
-                  <path d="M300,0 L320,200" stroke="#ffffff" strokeWidth="0.5" opacity="0.1" />
+                  <path d="M80,0 L120,200" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
+                  <path d="M200,0 L220,200" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
+                  <path d="M300,0 L320,200" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
                   <circle cx="200" cy="100" r="6" fill="#00f0ff">
                     <animate attributeName="r" values="6;14;6" dur="2s" repeatCount="indefinite" />
                     <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
@@ -108,10 +109,10 @@ export default function Contact() {
                   <div className="glass-panel rounded-xl p-4 text-sm leading-relaxed">
                     I am looking to{" "}
                     <select value={intent} onChange={(e) => setIntent(e.target.value)} className="bg-[#00f0ff]/10 text-[#00f0ff] rounded px-2 py-0.5 mx-1 focus:outline-none font-medium">
-                      {intentOptions.map((o) => <option key={o} value={o} className="bg-[#1a1a1c]">{o}</option>)}
+                      {intentOptions.map((o) => <option key={o} value={o} className="bg-card">{o}</option>)}
                     </select>
                     <select value={projectType} onChange={(e) => setProjectType(e.target.value)} className="bg-[#5d5fef]/10 text-[#5d5fef] rounded px-2 py-0.5 mx-1 focus:outline-none font-medium">
-                      {projectOptions.map((o) => <option key={o} value={o} className="bg-[#1a1a1c]">{o}</option>)}
+                      {projectOptions.map((o) => <option key={o} value={o} className="bg-card">{o}</option>)}
                     </select>
                     with NovoTechy.
                   </div>
@@ -125,7 +126,7 @@ export default function Contact() {
                       onChange={(e) => setName(e.target.value)}
                       required
                       placeholder="Jane Doe"
-                      className="w-full bg-white/5 rounded-xl px-4 py-2.5 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40"
+                      className="w-full bg-black/5 dark:bg-white/5 rounded-xl px-4 py-2.5 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40"
                     />
                   </div>
                   <div>
@@ -136,7 +137,7 @@ export default function Contact() {
                       onChange={(e) => setEmail(e.target.value)}
                       required
                       placeholder="jane@company.com"
-                      className="w-full bg-white/5 rounded-xl px-4 py-2.5 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40"
+                      className="w-full bg-black/5 dark:bg-white/5 rounded-xl px-4 py-2.5 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40"
                     />
                   </div>
                 </div>
@@ -148,7 +149,7 @@ export default function Contact() {
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
                     placeholder="Tell us more about your goals, timeline, and any specific requirements..."
-                    className="w-full bg-white/5 rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40 resize-none"
+                    className="w-full bg-black/5 dark:bg-white/5 rounded-xl px-4 py-3 text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40 resize-none"
                   />
                 </div>
 

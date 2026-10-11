@@ -1,4 +1,5 @@
 import { Users, Maximize2, HeartHandshake, Clock } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const reasons = [
   { icon: Users, title: "Expert Team", desc: "Skilled professionals with years of experience in cutting-edge technologies", color: "#00f0ff" },
@@ -11,13 +12,13 @@ export default function WhyChooseUs() {
   return (
     <section id="why-us" className="relative py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#00f0ff] font-mono">Why Choose NovoTechy</span>
           <h2 className="font-heading font-light text-4xl md:text-5xl mt-4 leading-tight">
             Your success
             <span className="text-gradient-cyan font-semibold"> is our priority</span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((r) => {

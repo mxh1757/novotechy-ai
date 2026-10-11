@@ -53,7 +53,7 @@ export default function AIChatAssistant() {
 
   return (
     <div className="glass-panel-strong rounded-2xl overflow-hidden flex flex-col h-[520px]">
-      <div className="px-5 py-4 border-b border-white/5 flex items-center gap-3 bg-gradient-to-r from-[#00f0ff]/5 to-transparent">
+      <div className="px-5 py-4 border-b border-black/5 dark:border-white/5 flex items-center gap-3 bg-gradient-to-r from-[#00f0ff]/5 to-transparent">
         <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00f0ff] to-[#5d5fef] flex items-center justify-center">
           <Bot className="w-5 h-5 text-[#080809]" strokeWidth={2.5} />
         </div>
@@ -73,7 +73,7 @@ export default function AIChatAssistant() {
           <div key={i} className={`flex gap-3 ${m.role === "user" ? "flex-row-reverse" : ""}`}>
             <div
               className={`w-8 h-8 rounded-lg flex-shrink-0 flex items-center justify-center ${
-                m.role === "user" ? "bg-white/5" : "bg-gradient-to-br from-[#00f0ff] to-[#5d5fef]"
+                m.role === "user" ? "bg-black/5 dark:bg-white/5" : "bg-gradient-to-br from-[#00f0ff] to-[#5d5fef]"
               }`}
             >
               {m.role === "user" ? (
@@ -121,14 +121,14 @@ export default function AIChatAssistant() {
         </div>
       )}
 
-      <div className="p-4 border-t border-white/5">
+      <div className="p-4 border-t border-black/5 dark:border-white/5">
         <div className="flex gap-2">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && send()}
             placeholder="Ask NovoTechy AI anything..."
-            className="flex-1 bg-white/5 rounded-xl px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40"
+            className="flex-1 bg-black/5 dark:bg-white/5 rounded-xl px-4 py-2.5 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-[#00f0ff]/40"
           />
           <button
             onClick={() => send()}

@@ -50,7 +50,7 @@ export default function CommandPalette({ open, onClose }) {
         className="relative w-full max-w-xl glass-panel-strong rounded-2xl overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 px-5 py-4 border-b border-white/5">
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-black/5 dark:border-white/5">
           <Search className="w-4 h-4 text-[#00f0ff]" />
           <input
             autoFocus
@@ -64,7 +64,7 @@ export default function CommandPalette({ open, onClose }) {
             placeholder="Type a command or search... (e.g. 'estimate my project')"
             className="flex-1 bg-transparent text-sm placeholder:text-muted-foreground/50 focus:outline-none"
           />
-          <kbd className="px-2 py-0.5 rounded bg-white/5 text-[10px] font-mono text-muted-foreground">ESC</kbd>
+          <kbd className="px-2 py-0.5 rounded bg-black/5 dark:bg-white/5 text-[10px] font-mono text-muted-foreground">ESC</kbd>
           <button onClick={onClose}><X className="w-4 h-4 text-muted-foreground" /></button>
         </div>
 
@@ -80,7 +80,7 @@ export default function CommandPalette({ open, onClose }) {
                   onClick={() => go(c.target)}
                   onMouseEnter={() => setActive(i)}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors ${
-                    active === i ? "bg-white/5" : ""
+                    active === i ? "bg-black/5 dark:bg-white/5" : ""
                   }`}
                 >
                   <div
@@ -100,7 +100,7 @@ export default function CommandPalette({ open, onClose }) {
           )}
         </div>
 
-        <div className="px-5 py-3 border-t border-white/5 flex items-center justify-between text-[10px] text-muted-foreground font-mono">
+        <div className="px-5 py-3 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-[10px] text-muted-foreground font-mono">
           <span>↑↓ navigate · ↵ select · esc close</span>
           <span className="text-[#00f0ff]">SEMANTIC NAV</span>
         </div>
