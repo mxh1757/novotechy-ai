@@ -3,6 +3,7 @@ import Navbar from "@/components/novotechy/Navbar";
 import Hero from "@/components/novotechy/Hero";
 import About from "@/components/novotechy/About";
 import Services from "@/components/novotechy/Services";
+import Products from "@/components/novotechy/Products";
 import AISolutions from "@/components/novotechy/AISolutions";
 import AIROICalculator from "@/components/novotechy/AIROICalculator";
 import Process from "@/components/novotechy/Process";
@@ -33,6 +34,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
+        <Products />
         <AISolutions />
         <AIROICalculator />
         <Process />

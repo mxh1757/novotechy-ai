@@ -15,6 +15,7 @@ export default function Navbar({ onOpenCommand }) {
   const links = [
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
+    { label: "Products", href: "#products" },
     { label: "AI Solutions", href: "#ai-solutions" },
     { label: "ROI", href: "#roi" },
     { label: "Process", href: "#process" },
@@ -38,7 +39,7 @@ export default function Navbar({ onOpenCommand }) {
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <a
               key={l.label}
