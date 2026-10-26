@@ -4,7 +4,7 @@ import ProductMock from "@/components/novotechy/ProductMock";
 
 const products = [
   {
-    name: "IntegrityThread",
+    name: "Integrity Thread",
     category: "Supply-chain compliance intelligence",
     tagline: "The global ledger for textile & apparel certification.",
     description:
